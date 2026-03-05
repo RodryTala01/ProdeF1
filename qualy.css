@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f1116;
+  color: #ffffff;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  border-bottom: 1px solid #1c1f26;
+}
+
+.logo { height: 40px; }
+
+h1 { margin: 0; font-size: 22px; }
+
+.titulo-pilotos {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* GRID PILOTOS */
+
+.grid-pilotos {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+/* PILOTO */
+
+.piloto {
+  background: #171a21;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+  border-left: 4px solid transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.piloto:hover {
+  background: #1c2028;
+  transform: scale(1.02);
+}
+
+.piloto.seleccionado {
+  outline: 2px solid #e10600;
+  background: #202632;
+}
+
+.piloto-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bandera {
+  width: 22px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.equipo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.borrar {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.borrar:hover { color: #e10600; }
+
+/* ZONAS */
+
+.contenedor {
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  gap: 40px;
+}
+
+.columna { flex: 1; }
+
+.zona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+/* Q3 EN UNA SOLA COLUMNA */
+
+.q3-grid {
+  grid-template-columns: 1fr;
+}
+
+.casillero {
+  border: 2px dashed #2a2f3a;
+  border-radius: 8px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #1a1d24;
+  position: relative;
+  transition: 0.2s;
+  padding-left: 50px;
+}
+
+.casillero.vacio::after {
+  content: "+";
+  font-size: 22px;
+  color: #3a3f4a;
+  position: absolute;
+  right: 15px;
+}
+
+.casillero.activo {
+  border-color: #e10600;
+  background: #1f232d;
+}
+
+.casillero .piloto {
+  height: 100%;
+}
+
+/* NUMERO Q3 GRANDE Y NOTORIO */
+
+.numero-posicion {
+  position: absolute;
+  left: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #e10600;
+  opacity: 0.9;
+}
+
+/* POLE POSITION MÁS FUERTE */
+
+.pole {
+  background: #2a0000;
+  border-color: #e10600;
+}
+
+.pole .numero-posicion {
+  font-size: 26px;
+}
+
+@media (max-width: 900px) {
+  .contenedor { flex-direction: column; }
+}
