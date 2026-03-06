@@ -426,17 +426,16 @@ cursor:pointer;
 
 .circuito-info{
 display:flex;
+flex-direction:column;
 align-items:center;
-justify-content:center;
-gap:12px;
-margin-top:8px;
-margin-bottom:10px;
-opacity:0.9;
+gap:6px;
 }
 
 .circuito-img{
-height:100px;
+height:125px;
 object-fit:contain;
+opacity:0.9;
+margin: 0;
 }
 
 #circuito-nombre{
@@ -444,4 +443,21 @@ object-fit:contain;
 font-size:20px;
 letter-spacing:.01px;
 color:#aaa;
+
+
+/* fila horario */
+
+.fila-horario{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:13px;
+color:#bbb;
 }
+
+.bandera-horario{
+width:18px;
+height:12px;
+object-fit:cover;
+border-radius:2px;
+}}

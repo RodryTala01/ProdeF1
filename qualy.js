@@ -1,5 +1,6 @@
 const circuitoNombre = "GP 1/24: Australia Albert Park";
 const circuitoImagen = "image/circuitos/australia.png";
+const horarioCarrera = "Sábado 7 de Marzo 02:00 AM";
 
 const pilotos=[
 
@@ -60,6 +61,8 @@ document.getElementById("circuito-nombre").innerText=circuitoNombre;
 document.querySelectorAll(".circuito-img").forEach(img=>{
 img.src=circuitoImagen;
 });
+
+document.getElementById("horario").innerText = horarioCarrera;
 
 pilotos.sort((a,b)=>a.equipo.localeCompare(b.equipo));
 
@@ -498,7 +501,7 @@ if(!pronosticoCompleto()) return;
 
 /* sigue tu código de whatsapp */
 
-let mensaje=`🏁 *Pronóstico Clasificación*\n${circuitoNombre}\n\n`;
+let mensaje=`*Pronóstico Clasificación*\n${circuitoNombre}\n\n`;
 /* Q3 */
 
 mensaje+="*Q3*\n";
