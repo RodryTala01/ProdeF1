@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora PRODE F1</title>
+<link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Calculadora PRODE F1 2026</h1>
+
+<!-- INPUT MENSAJE -->
+<label for="mensajePronostico">PEGA TU MENSAJE</label>
+<textarea id="mensajePronostico" placeholder="Pega acá tu pronóstico..." rows="10"></textarea>
+
+<!-- SELECTORES -->
+<div class="selectores">
+  <select id="gpSelector">
+    <option value="">Selecciona un GP</option>
+    <option value="australia" data-sprint="no">GP Australia</option>
+    <option value="china" data-sprint="si">GP China</option>
+    <option value="japon" data-sprint="no">GP Japón</option>
+    <option value="bahrein" data-sprint="no">GP Bahréin</option>
+    <option value="arabia" data-sprint="no">GP Arabia Saudita</option>
+    <option value="miami" data-sprint="si">GP Miami</option>
+    <option value="canada" data-sprint="si">GP Canadá</option>
+    <option value="monaco" data-sprint="no">GP Mónaco</option>
+    <option value="espana" data-sprint="no">GP España</option>
+    <option value="austria" data-sprint="no">GP Austria</option>
+    <option value="uk" data-sprint="si">GP Reino Unido</option>
+    <option value="belgica" data-sprint="no">GP Bélgica</option>
+    <option value="hungria" data-sprint="no">GP Hungría</option>
+    <option value="paisesbajos" data-sprint="si">GP Países Bajos</option>
+    <option value="italia" data-sprint="no">GP Italia</option>
+    <option value="madrid" data-sprint="no">GP Madrid</option>
+    <option value="azerbaiyan" data-sprint="no">GP Azerbaiyán</option>
+    <option value="singapur" data-sprint="si">GP Singapur</option>
+    <option value="usa" data-sprint="no">GP Estados Unidos</option>
+    <option value="mexico" data-sprint="no">GP Ciudad de México</option>
+    <option value="brasil" data-sprint="no">GP Brasil</option>
+    <option value="lasvegas" data-sprint="no">GP Las Vegas</option>
+    <option value="qatar" data-sprint="no">GP Qatar</option>
+    <option value="abudabi" data-sprint="no">GP Abu Dabi</option>
+  </select>
+
+  <div id="sprintContainer">
+  <select id="tipoCarrera">
+    <option value="" disabled selected>Selecciona Sprint o Carrera</option>
+    <option value="sprint">Sprint</option>
+    <option value="normal">Normal</option>
+  </select>
+</div>
+
+  <select id="clasificacionCarrera">
+    <option value="">Selecciona Clasificatoria/Carrera</option>
+    <option value="clasificacion">Clasificatoria</option>
+    <option value="carrera">Carrera</option>
+  </select>
+</div>
+
+<button id="calcular">CALCULAR</button>
+
+<!-- RESULTADOS -->
+<div class="resultados">
+
+  <div class="tabla-usuario">
+    <h3>Tu Pronóstico</h3>
+    <div id="tablaUsuario" class="tabla-scroll"></div>
+  </div>
+
+  <div class="tabla-real">
+    <h3>Resultado Oficial</h3>
+    <div id="tablaReal" class="tabla-scroll"></div>
+  </div>
+
+</div>
+
+<!-- Vuelta Rápida (solo carrera) -->
+<div class="vr-container" id="vrContainer" style="display:none;">
+  <h3>VUELTA RAPIDA</h3>
+  <div class="vr-tabla">
+    <div id="vrUsuario"></div>
+    <div id="vrReal"></div>
+  </div>
+</div>
+
+<!-- PUNTOS -->
+<div class="puntos-container" id="puntosContainer" style="display:none;">
+  <h2>Puntos Totales: <span id="puntosTotales">0</span></h2>
+  <h3>Aciertos: <span id="cantidadAciertos">0</span></h3>
+</div>
+
+<script src="calculadora.js"></script>
+</body>
+</html>

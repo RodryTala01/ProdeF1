@@ -257,7 +257,7 @@ height:100%;
 display:flex;
 justify-content:center;
 gap:16px;
-margin:40px 0 70px 0;
+margin:30px 0 20px 0;
 flex-wrap:wrap;
 }
 
@@ -276,6 +276,14 @@ min-width:180px;
 
 .botones-acciones button:hover{
 background:#232834;
+}
+
+#calculadora{
+border-color:#b1ae09;
+}
+
+#calculadora:hover{
+background:#5f770a;
 }
 
 #descargar{
@@ -521,4 +529,32 @@ display:flex;
 align-items:center;
 gap:10px;
 
+}
+
+.modal-confirmacion{
+text-align:center;
+}
+
+.modal-confirmacion p{
+opacity:.8;
+margin-bottom:18px;
+}
+
+.modal-botones{
+display:flex;
+gap:10px;
+}
+
+.modal-botones button{
+flex:1;
+padding:10px;
+border-radius:6px;
+border:1px solid #2a2f3a;
+background:#1c2028;
+color:white;
+cursor:pointer;
+}
+
+.modal-botones button:hover{
+background:#242a34;
 }

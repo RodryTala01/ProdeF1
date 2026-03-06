@@ -489,3 +489,25 @@ tabla.remove();
 });
 
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const botonCalculadora = document.getElementById("calculadora");
+  const modalCalculadora = document.getElementById("modalCalculadora");
+
+  const cancelarCalculadora = document.getElementById("cancelarCalculadora");
+  const confirmarCalculadora = document.getElementById("confirmarCalculadora");
+
+  botonCalculadora.addEventListener("click", () => {
+    modalCalculadora.classList.add("activo");
+  });
+
+  cancelarCalculadora.addEventListener("click", () => {
+    modalCalculadora.classList.remove("activo");
+  });
+
+  confirmarCalculadora.addEventListener("click", () => {
+    window.location.href = "calculadora.html";
+  });
+
+});

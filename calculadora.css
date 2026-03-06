@@ -1,0 +1,137 @@
+body{
+  font-family: "Segoe UI", sans-serif;
+  background:#0f1116;
+  color:white;
+  margin:0;
+  padding:20px;
+}
+
+h1{text-align:center;margin-bottom:20px;}
+
+textarea{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid #2a2f3a;
+  background:#151922;
+  color:white;
+  resize:vertical;
+}
+
+.selectores{
+  display:flex;
+  gap:10px;
+  margin:15px 0;
+  flex-wrap:wrap;
+}
+
+select{
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #2a2f3a;
+  background:#151922;
+  color:white;
+  min-width:150px;
+}
+
+button#calcular{
+  padding:12px 25px;
+  border-radius:6px;
+  border:none;
+  background:#e10600;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  margin-bottom:20px;
+  display:block;
+  width:100%;
+  max-width:300px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.resultados{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.tabla-usuario, .tabla-real{
+  flex:1;
+  min-width:280px;
+  background:#151922;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #2a2f3a;
+}
+
+.tabla-usuario h3, .tabla-real h3{
+  text-align:center;
+  margin-top:0;
+  margin-bottom:10px;
+}
+
+.tabla-scroll{
+  max-height:400px;
+  overflow-y:auto;
+}
+
+.tabla-scroll div{
+  display:flex;
+  justify-content:space-between;
+  padding:4px 6px;
+  border-bottom:1px solid #2a2f3a;
+  border-radius:4px;
+}
+
+.tabla-scroll div.acertado{
+  background:#0f5e0f;
+}
+
+.tabla-scroll div.fallado{
+  background:#5e0f0f;
+}
+
+.vr-container{
+  margin-top:20px;
+  background:#151922;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #2a2f3a;
+}
+
+.vr-tabla{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.vr-tabla div{
+  flex:1;
+  text-align:center;
+}
+
+.puntos-container{
+  text-align:center;
+  margin-top:20px;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #2a2f3a;
+  background:#151922;
+}
+
+/* responsive */
+@media(max-width:768px){
+  .resultados{
+    flex-direction:column;
+  }
+  .vr-tabla{
+    flex-direction:column;
+  }
+}
+
+/* Ocultar por defecto el selector de Sprint */
+#sprintContainer {
+  display: none;
+}

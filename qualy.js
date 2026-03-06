@@ -111,6 +111,30 @@ e.dataTransfer.setData("text",p.nombre);
 return div;
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const botonCalculadora = document.getElementById("calculadora");
+  const modalCalculadora = document.getElementById("modalCalculadora");
+
+  const cancelarCalculadora = document.getElementById("cancelarCalculadora");
+  const confirmarCalculadora = document.getElementById("confirmarCalculadora");
+
+  botonCalculadora.addEventListener("click", () => {
+    modalCalculadora.classList.add("activo");
+  });
+
+  cancelarCalculadora.addEventListener("click", () => {
+    modalCalculadora.classList.remove("activo");
+  });
+
+  confirmarCalculadora.addEventListener("click", () => {
+    window.location.href = "calculadora.html";
+  });
+
+});
+
+
 function seleccionar(div){
 
 document.querySelectorAll(".piloto").forEach(p=>p.classList.remove("seleccionado"));
@@ -585,3 +609,4 @@ return false;
 return true;
 
 }
+

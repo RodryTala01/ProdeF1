@@ -120,3 +120,11 @@ height:12rem;
 }
 
 }
+
+.calculadora{
+border-color:#b1ae09;
+}
+
+.calculadora:hover{
+background:#5f770a;
+}
