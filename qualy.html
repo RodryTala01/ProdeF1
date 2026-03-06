@@ -1,39 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Prode Tafa - Qualy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="qualy.css">
+
+<meta charset="UTF-8">
+<title>Prode Tafa - Qualy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="qualy.css">
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 </head>
+
 <body>
 
+<div id="captura">
+
 <header class="header">
-  <img src="f1.png" class="logo">
-  <h1>Clasificación</h1>
-  <img src="prode-tafa.png" class="logo">
+
+<div class="logo">
+<img src="image/f1.png" class="f1">
+</div>
+
+<h1>Clasificación</h1>
+
+
+<div class="logo">
+<img src="image/prode-tafa.png">
+</div>
+
+
 </header>
 
+<div class="circuito-info">
+
+<img class="circuito-img">
+<span id="circuito-nombre"></span>
+<img class="circuito-img">
+
+</div>
+
 <h2 class="titulo-pilotos">Pilotos</h2>
+
 <div id="listaPilotos" class="grid-pilotos"></div>
 
 <div class="contenedor">
 
-  <div class="columna">
-    <h2>Q3 (Top 10)</h2>
-    <div id="q3" class="zona-grid q3-grid"></div>
-  </div>
+<div class="columna">
 
-  <div class="columna">
-    <h2>Q2 (11°–16°)</h2>
-    <div id="q2" class="zona-grid"></div>
+<h2>Q3 (Top 10)</h2>
+<div id="q3" class="zona-grid q3-grid"></div>
 
-    <h2 style="margin-top:25px;">Q1 (17°–22°)</h2>
-    <div id="q1" class="zona-grid"></div>
-  </div>
+</div>
+
+<div class="columna">
+
+<h2>Q2 (11°–16°)</h2>
+<div id="q2" class="zona-grid"></div>
+
+<h2 style="margin-top:25px;">Q1 (17°–22°)</h2>
+<div id="q1" class="zona-grid"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="botones-acciones">
+
+<button id="descargar">⬇ Descargar imagen ⬇</button>
+
+<button id="enviar">📤 Enviar pronóstico 📤</button>
+
+<a href="carrera.html">
+<button id="carrera">🏁 Ir a carrera 🏁</button>
+</a>
+
+</div>
+
+<div id="modalPilotos" class="modal">
+
+<div class="modal-contenido">
+
+<h3>Elegir piloto</h3>
+
+<div id="listaModalPilotos"></div>
+
+<button id="cerrarModal">Cancelar</button>
+
+</div>
 
 </div>
 
 <script src="qualy.js"></script>
+
 </body>
 </html>

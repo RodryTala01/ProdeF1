@@ -1,0 +1,122 @@
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#0f1116;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.contenedor{
+width:100%;
+max-width:500px;
+padding:25px;
+box-sizing:border-box;
+text-align:center;
+}
+
+/* HEADER */
+
+.header{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:25px;
+margin-bottom:30px;
+}
+
+.logo{
+height:40px;
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:100%;
+}
+
+.logo .f1{
+height:60%;
+}
+
+h1{
+margin:0;
+font-size:24px;
+letter-spacing:1px;
+}
+
+/* CIRCUITO */
+
+.circuito{
+margin-bottom:35px;
+}
+
+.circuito-img{
+height:12rem;
+object-fit:contain;
+margin-bottom:10px;
+opacity:.9;
+}
+
+.circuito h2{
+margin:0;
+font-size:22px;
+}
+
+.circuito p{
+margin:3px 0 0 0;
+color:#aaa;
+font-size:14px;
+}
+
+/* BOTONES */
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.boton{
+text-decoration:none;
+padding:16px;
+border-radius:10px;
+font-size:18px;
+font-weight:500;
+transition:.2s;
+border:1px solid #2a2f3a;
+background:#171a21;
+color:white;
+}
+
+.boton:hover{
+background:#1f232c;
+}
+
+.clasificacion{
+border-color:#3a7cff;
+}
+
+.carrera{
+border-color:#ff8700;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.contenedor{
+padding:20px;
+}
+
+h1{
+font-size:20px;
+}
+
+.circuito-img{
+height:12rem;
+}
+
+}
