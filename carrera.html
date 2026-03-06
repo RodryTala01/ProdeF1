@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Prode Tafa - Carrera</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="carrera.css">
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="captura">
+
+<header class="header">
+
+<div class="logo">
+<img src="image/f1.png" class="f1">
+</div>
+
+<h1>Carrera</h1>
+
+<div class="logo">
+<img src="image/prode-tafa.png">
+</div>
+
+</header>
+
+<div class="circuito-info">
+
+<img class="circuito-img">
+
+<span id="circuito-nombre"></span>
+
+<div class="fila-horario">
+<span id="horario"></span>
+</div>
+
+</div>
+
+<h2 class="titulo-pilotos">Pilotos</h2>
+
+<div id="listaPilotos" class="grid-pilotos"></div>
+
+<div class="contenedor-carrera">
+
+<div id="columna1" class="columna-carrera"></div>
+
+<div id="columna2" class="columna-carrera"></div>
+
+</div>
+
+
+
+</div>
+<div class="vuelta-rapida-box">
+
+<div class="titulo-vr">
+VUELTA RAPIDA
+</div>
+
+<div id="selectorVR" class="casillero-vr">
+
+<div id="vrContenido">
+Seleccionar piloto
+</div>
+
+</div>
+
+</div>
+
+<div class="botones-acciones">
+
+<button id="descargar">⬇ Descargar imagen ⬇</button>
+
+<button id="enviar">📤 Enviar pronóstico 📤</button>
+
+<a href="qualy.html">
+<button id="qualy">⬅ Ir a qualy ⬅</button>
+</a>
+
+</div>
+
+<div id="modalVR" class="modal">
+
+<div class="modal-contenido">
+
+<h3>Vuelta Rápida</h3>
+
+<div id="listaVR"></div>
+
+<button id="cerrarModal">Cancelar</button>
+
+</div>
+
+</div>
+
+<div id="modalPilotos" class="modal">
+
+<div class="modal-contenido">
+
+<h3>Elegir piloto</h3>
+
+<div id="listaModalPilotos"></div>
+
+<button id="cerrarModal2">Cancelar</button>
+
+</div>
+
+</div>
+
+<script src="carrera.js"></script>
+
+</body>
+</html>
