@@ -132,11 +132,8 @@ border:1px solid #2a2f3a;
 }
 
 .tabla-scroll{
-
-max-height:400px;
-
-overflow-y:auto;
-
+max-height:none;
+overflow:visible;
 }
 
 .tabla-scroll div{
@@ -217,4 +214,22 @@ flex-direction:column;
 
 }
 
+}
+
+.compañero{
+background:#ffe066;
+color:#333;
+}
+
+.pts{
+float:right;
+font-size:13px;
+opacity:0.8;
+font-weight:normal;
+}
+
+.tiempo{
+float:right;
+opacity:.7;
+font-size:13px;
 }
