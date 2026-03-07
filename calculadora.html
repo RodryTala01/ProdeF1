@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="styles.css">
 
-
-
+<div class="container">
 
 <h1>Calculadora F1</h1>
 
 <label>Mensaje:</label>
 <textarea id="mensaje" placeholder="Pega el pronóstico acá"></textarea>
 
+<div class="selectores">
+
+<div>
 <label>Gran Premio:</label>
 <select id="gp">
 <option value="">Seleccionar GP</option>
@@ -36,19 +38,39 @@
 <option value="qatar">Qatar</option>
 <option value="abudabi">Abu Dabi</option>
 </select>
+</div>
 
 <div id="sprintContainer">
-
 <label>Tipo:</label>
 <select id="sprint">
 <option value="normal">Normal</option>
 <option value="sprint">Sprint</option>
 </select>
+</div>
 
 </div>
 
-<button onclick="calcular()">Calcular</button>
+<button id="calcular">Calcular puntos</button>
 
-<h2 id="resultado"></h2>
+<div class="resultados">
+
+<div class="tabla-usuario">
+<h3>Tu pronóstico</h3>
+<div id="tablaUsuario" class="tabla-scroll"></div>
+</div>
+
+<div class="tabla-real">
+<h3>Resultado oficial</h3>
+<div id="tablaReal" class="tabla-scroll"></div>
+</div>
+
+</div>
+
+<div class="puntos-container" id="puntosContainer">
+<h2 id="puntosTotales"></h2>
+<div id="totalAciertos"></div>
+</div>
+
+</div>
 
 <script src="script.js"></script>
