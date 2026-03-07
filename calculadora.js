@@ -9,21 +9,59 @@ const resultados={
 
 australia:{
 clasificacion:{posiciones:[
-"Sergio Pérez","Charles Leclerc","Oliver Bearman","Lando Norris","Oscar Piastri",
-"Kimi Antonelli","George Russell","Max Verstappen","Isack Hadjar","Lewis Hamilton",
-"Valtteri Bottas","Gabriel Bortoleto","Esteban Ocon","Liam Lawson","Nico Hülkenberg",
-"Arvid Lindblad","Fernando Alonso","Lance Stroll","Carlos Sainz","Alexander Albon",
-"Pierre Gasly","Franco Colapinto"
+{piloto:"Sergio Pérez", tiempo:"1:15.221"},
+{piloto:"Charles Leclerc", tiempo:"+0.112"},
+{piloto:"Oliver Bearman", tiempo:"+0.240"},
+{piloto:"Lando Norris", tiempo:"+0.351"},
+{piloto:"Oscar Piastri", tiempo:"+0.418"},
+{piloto:"Kimi Antonelli", tiempo:"+0.503"},
+{piloto:"George Russell", tiempo:"+0.587"},
+{piloto:"Max Verstappen", tiempo:"+0.662"},
+{piloto:"Isack Hadjar", tiempo:"+0.741"},
+{piloto:"Lewis Hamilton", tiempo:"+0.803"},
+{piloto:"Valtteri Bottas", tiempo:"+0.912"},
+{piloto:"Gabriel Bortoleto", tiempo:"+1.044"},
+{piloto:"Esteban Ocon", tiempo:"+1.118"},
+{piloto:"Liam Lawson", tiempo:"+1.207"},
+{piloto:"Nico Hülkenberg", tiempo:"+1.292"},
+{piloto:"Arvid Lindblad", tiempo:"+1.344"},
+{piloto:"Fernando Alonso", tiempo:"+1.482"},
+{piloto:"Lance Stroll", tiempo:"+1.566"},
+{piloto:"Carlos Sainz", tiempo:"+1.642"},
+{piloto:"Alexander Albon", tiempo:"+1.721"},
+{piloto:"Pierre Gasly", tiempo:"+1.803"},
+{piloto:"Franco Colapinto", tiempo:"+1.944"}
 ]},
+
 carrera:{
 posiciones:[
-"Sergio Pérez","Lewis Hamilton","Charles Leclerc","Esteban Ocon","Lando Norris",
-"George Russell","Kimi Antonelli","Isack Hadjar","Arvid Lindblad","Carlos Sainz",
-"Alexander Albon","Pierre Gasly","Fernando Alonso","Nico Hülkenberg","Valtteri Bottas",
-"Oscar Piastri","Franco Colapinto","Lance Stroll","Oliver Bearman","Max Verstappen",
-"Gabriel Bortoleto","Liam Lawson"
+{piloto:"Sergio Pérez", tiempo:"1:31:42.221"},
+{piloto:"Lewis Hamilton", tiempo:"+2.441"},
+{piloto:"Charles Leclerc", tiempo:"+5.008"},
+{piloto:"Esteban Ocon", tiempo:"+7.112"},
+{piloto:"Lando Norris", tiempo:"+9.544"},
+{piloto:"George Russell", tiempo:"+12.887"},
+{piloto:"Kimi Antonelli", tiempo:"+16.221"},
+{piloto:"Isack Hadjar", tiempo:"+18.004"},
+{piloto:"Arvid Lindblad", tiempo:"+21.776"},
+{piloto:"Carlos Sainz", tiempo:"+24.338"},
+{piloto:"Alexander Albon", tiempo:"+28.441"},
+{piloto:"Pierre Gasly", tiempo:"+31.115"},
+{piloto:"Fernando Alonso", tiempo:"+35.002"},
+{piloto:"Nico Hülkenberg", tiempo:"+39.887"},
+{piloto:"Valtteri Bottas", tiempo:"+44.110"},
+{piloto:"Oscar Piastri", tiempo:"+48.221"},
+{piloto:"Franco Colapinto", tiempo:"+52.440"},
+{piloto:"Lance Stroll", tiempo:"+58.009"},
+{piloto:"Oliver Bearman", tiempo:"+1:02.887"},
+{piloto:"Max Verstappen", tiempo:"DNF"},
+{piloto:"Gabriel Bortoleto", tiempo:"DNF"},
+{piloto:"Liam Lawson", tiempo:"DNF"}
 ],
-vueltaRapida:"Lewis Hamilton"
+vueltaRapida:{
+piloto:"Lewis Hamilton",
+tiempo:"1:20.441"
+}
 }
 },
 
@@ -266,7 +304,7 @@ return equipos[a] && equipos[a]===equipos[b];
 
 
 // CALCULO
-function calcularPuntos(usuario,real,tipo,vrUsuario,vrReal){
+function calcularPuntos(usuario,real,tipo,vrUsuario,vrReal,vrTiempo){
 
 let puntos=0;
 let aciertos=0;
@@ -294,8 +332,10 @@ let usuarioP=usuario[i];
 let filaUser=document.createElement("div");
 let filaReal=document.createElement("div");
 
+let etiqueta = tipo==="clasificacion" ? etiquetaQualy(i) : (i+1);
+
 filaReal.innerHTML=
-`${i+1}. ${realP} ${tiempoReal?`<span class="tiempo">${tiempoReal}</span>`:""}`;
+`${etiqueta}. ${realP} ${tiempoReal?`<span class="tiempo">${tiempoReal}</span>`:""}`;
 tablaReal.appendChild(filaReal);
 
 if(!usuarioP){
@@ -388,7 +428,7 @@ puntos+=pts;
 filaUser.classList.add(clase);
 
 filaUser.innerHTML=
-`${i+1}. ${usuarioP} ${pts>0?`<span class="pts">+${pts}</span>`:""}`;
+`${etiqueta}. ${usuarioP} ${pts>0?`<span class="pts">+${pts.toFixed(1)}</span>`:""}`;
 
 tablaUsuario.appendChild(filaUser);
 
@@ -474,6 +514,16 @@ vrTiempo
 );
 
 });
+
+function etiquetaQualy(i){
+
+if(i<=9) return (i+1);
+
+if(i>=10 && i<=15) return "Q2";
+
+if(i>=16) return "Q1";
+
+}
 
 
 // inicializar
