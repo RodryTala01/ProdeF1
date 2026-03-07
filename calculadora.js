@@ -5,13 +5,89 @@ const gpsConSprint = [
 
 // RESULTADOS
 const resultados={
+
+
 australia:{
-clasificacion:{posiciones:["Sergio Pérez","Charles Leclerc","Oliver Bearman","Lando Norris","Oscar Piastri","Kimi Antonelli","George Russell","Max Verstappen","Isack Hadjar","Lewis Hamilton","Valtteri Bottas","Gabriel Bortoleto","Esteban Ocon","Liam Lawson","Nico Hülkenberg","Arvid Lindblad","Fernando Alonso","Lance Stroll","Carlos Sainz","Alexander Albon","Pierre Gasly","Franco Colapinto"]},
-carrera:{posiciones:["Sergio Pérez","Lewis Hamilton","Charles Leclerc","Esteban Ocon","Lando Norris","George Russell","Kimi Antonelli","Isack Hadjar","Arvid Lindblad","Carlos Sainz","Alexander Albon","Pierre Gasly","Fernando Alonso","Nico Hülkenberg","Valtteri Bottas","Oscar Piastri","Franco Colapinto","Lance Stroll","Oliver Bearman","Max Verstappen","Gabriel Bortoleto","Liam Lawson"],vueltaRapida:"Lewis Hamilton"}
+clasificacion:{posiciones:[
+"Sergio Pérez","Charles Leclerc","Oliver Bearman","Lando Norris","Oscar Piastri",
+"Kimi Antonelli","George Russell","Max Verstappen","Isack Hadjar","Lewis Hamilton",
+"Valtteri Bottas","Gabriel Bortoleto","Esteban Ocon","Liam Lawson","Nico Hülkenberg",
+"Arvid Lindblad","Fernando Alonso","Lance Stroll","Carlos Sainz","Alexander Albon",
+"Pierre Gasly","Franco Colapinto"
+]},
+carrera:{
+posiciones:[
+"Sergio Pérez","Lewis Hamilton","Charles Leclerc","Esteban Ocon","Lando Norris",
+"George Russell","Kimi Antonelli","Isack Hadjar","Arvid Lindblad","Carlos Sainz",
+"Alexander Albon","Pierre Gasly","Fernando Alonso","Nico Hülkenberg","Valtteri Bottas",
+"Oscar Piastri","Franco Colapinto","Lance Stroll","Oliver Bearman","Max Verstappen",
+"Gabriel Bortoleto","Liam Lawson"
+],
+vueltaRapida:"Lewis Hamilton"
+}
+},
+
+china:{
+clasificacion:{posiciones:[
+{piloto:"Sergio Pérez", tiempo:"1:15.221"},
+{piloto:"Charles Leclerc", tiempo:"+0.112"},
+{piloto:"Oliver Bearman", tiempo:"+0.240"},
+{piloto:"Lando Norris", tiempo:"+0.351"},
+{piloto:"Oscar Piastri", tiempo:"+0.418"},
+{piloto:"Kimi Antonelli", tiempo:"+0.503"},
+{piloto:"George Russell", tiempo:"+0.587"},
+{piloto:"Max Verstappen", tiempo:"+0.662"},
+{piloto:"Isack Hadjar", tiempo:"+0.741"},
+{piloto:"Lewis Hamilton", tiempo:"+0.803"},
+{piloto:"Valtteri Bottas", tiempo:"+0.912"},
+{piloto:"Gabriel Bortoleto", tiempo:"+1.044"},
+{piloto:"Esteban Ocon", tiempo:"+1.118"},
+{piloto:"Liam Lawson", tiempo:"+1.207"},
+{piloto:"Nico Hülkenberg", tiempo:"+1.292"},
+{piloto:"Arvid Lindblad", tiempo:"+1.344"},
+{piloto:"Fernando Alonso", tiempo:"+1.482"},
+{piloto:"Lance Stroll", tiempo:"+1.566"},
+{piloto:"Carlos Sainz", tiempo:"+1.642"},
+{piloto:"Alexander Albon", tiempo:"+1.721"},
+{piloto:"Pierre Gasly", tiempo:"+1.803"},
+{piloto:"Franco Colapinto", tiempo:"+1.944"}
+]},
+
+carrera:{
+posiciones:[
+{piloto:"Sergio Pérez", tiempo:"1:31:42.221"},
+{piloto:"Lewis Hamilton", tiempo:"+2.441"},
+{piloto:"Charles Leclerc", tiempo:"+5.008"},
+{piloto:"Esteban Ocon", tiempo:"+7.112"},
+{piloto:"Lando Norris", tiempo:"+9.544"},
+{piloto:"George Russell", tiempo:"+12.887"},
+{piloto:"Kimi Antonelli", tiempo:"+16.221"},
+{piloto:"Isack Hadjar", tiempo:"+18.004"},
+{piloto:"Arvid Lindblad", tiempo:"+21.776"},
+{piloto:"Carlos Sainz", tiempo:"+24.338"},
+{piloto:"Alexander Albon", tiempo:"+28.441"},
+{piloto:"Pierre Gasly", tiempo:"+31.115"},
+{piloto:"Fernando Alonso", tiempo:"+35.002"},
+{piloto:"Nico Hülkenberg", tiempo:"+39.887"},
+{piloto:"Valtteri Bottas", tiempo:"+44.110"},
+{piloto:"Oscar Piastri", tiempo:"+48.221"},
+{piloto:"Franco Colapinto", tiempo:"+52.440"},
+{piloto:"Lance Stroll", tiempo:"+58.009"},
+{piloto:"Oliver Bearman", tiempo:"+1:02.887"},
+{piloto:"Max Verstappen", tiempo:"DNF"},
+{piloto:"Gabriel Bortoleto", tiempo:"DNF"},
+{piloto:"Liam Lawson", tiempo:"DNF"}
+],
+vueltaRapida:{
+piloto:"Lewis Hamilton",
+tiempo:"1:20.441"
+}
+}
 }
 };
 
-// equipos
+
+// EQUIPOS
 const equipos={
 "Sergio Pérez":"Red Bull",
 "Charles Leclerc":"Ferrari",
@@ -37,27 +113,49 @@ const equipos={
 "Franco Colapinto":"Alpine"
 };
 
-// DOM (corregido)
+// DOM
 const mensajePronostico=document.getElementById("mensaje");
 const gpSelector=document.getElementById("gp");
 const tipoCarrera=document.getElementById("sprint");
-const sprintContainer = document.getElementById("sprintContainer");
+const sprintContainer=document.getElementById("sprintContainer");
 
-gpSelector.addEventListener("change",()=>{
+const tablaUsuario=document.getElementById("tablaUsuario");
+const tablaReal=document.getElementById("tablaReal");
 
-actualizarSprint(gpSelector.value);
+const puntosTotales=document.getElementById("puntosTotales");
+const totalAciertos=document.getElementById("totalAciertos");
+const puntosContainer=document.getElementById("puntosContainer");
 
-});
 
 // detectar tipo
 function detectarTipoPronostico(texto){
 
 const t=texto.toLowerCase();
 
-if(t.includes("pronóstico clasificación")||t.includes("pronostico clasificacion")) return "clasificacion";
-if(t.includes("pronóstico carrera")||t.includes("pronostico carrera")) return "carrera";
+if(t.includes("clasificación") || t.includes("clasificacion") || t.includes("q3"))
+return "clasificacion";
+
+if(t.includes("carrera"))
+return "carrera";
 
 return null;
+
+}
+
+function esAbandono(valor){
+
+if(!valor) return false;
+
+const v=valor.toUpperCase();
+
+return (
+v==="DNF" ||
+v==="DNS" ||
+v==="DSQ" ||
+v==="NC" ||
+v==="DNQ" ||
+v==="WD"
+);
 
 }
 
@@ -66,13 +164,13 @@ function actualizarSprint(gp){
 
 if(gpsConSprint.includes(gp)){
 sprintContainer.style.display="block";
-console.log("DETECTADO")
 }else{
 sprintContainer.style.display="none";
 tipoCarrera.value="normal";
 }
 
 }
+
 
 // detectar GP
 function detectarGP(texto){
@@ -89,7 +187,7 @@ if(t.includes("canada")) return "canada";
 if(t.includes("monaco")) return "monaco";
 if(t.includes("espana")) return "espana";
 if(t.includes("austria")) return "austria";
-if(t.includes("reino unido") || t.includes("great britain")) return "uk";
+if(t.includes("reino unido")) return "uk";
 if(t.includes("belgica")) return "belgica";
 if(t.includes("hungria")) return "hungria";
 if(t.includes("paises bajos")) return "paisesbajos";
@@ -109,212 +207,274 @@ return null;
 }
 
 
-
-// DETECTAR GP AUTOMÁTICAMENTE AL PEGAR TEXTO
+// detectar GP al pegar mensaje
 mensajePronostico.addEventListener("input",()=>{
 
 const texto=mensajePronostico.value;
+const gpDetectado=detectarGP(texto);
 
-const gp=detectarGP(texto);
-
-if(gp){
-
-gpSelector.value=gp;
-actualizarSprint(gp);
-
+if(gpDetectado){
+gpSelector.value=gpDetectado;
+actualizarSprint(gpDetectado);
 }
 
 });
 
+gpSelector.addEventListener("change",()=>{
+actualizarSprint(gpSelector.value);
+});
 
 
 // parser
-function parsearMensaje(texto,tipo){
+function parsearMensaje(texto){
 
 const lineas=texto.split("\n").map(l=>l.trim()).filter(l=>l!=="");
 
 let pronostico=[];
+let vueltaRapida=null;
 
 for(let l of lineas){
+
+if(l.startsWith("Vuelta")){
+vueltaRapida=l.replace(/Vuelta rápida:?/i,"").trim();
+continue;
+}
 
 if(l.startsWith("Pronóstico")) continue;
 if(l.startsWith("GP")) continue;
 if(l.startsWith("Q1")||l.startsWith("Q2")||l.startsWith("Q3")) continue;
 if(l.startsWith("────────")) continue;
-if(l.startsWith("Vuelta")) continue;
 
 if(l.match(/^\d+/)){
-
-pronostico.push({
-nombre:l.replace(/^\d+°?\s*/,"")
-});
-
+let nombre=l.replace(/^\d+°?\s*/,"").trim();
+pronostico.push(nombre);
+}else{
+if(pronostico.length<22) pronostico.push(l);
 }
 
 }
 
-return pronostico;
+return {pronostico,vueltaRapida};
 
 }
 
 
+// mismo equipo
+function mismoEquipo(a,b){
+return equipos[a] && equipos[a]===equipos[b];
+}
 
-// calcular puntos
-function calcularPuntos(usuario,real,tipo,vuelta,gp){
 
-let total=0;
+// CALCULO
+function calcularPuntos(usuario,real,tipo,vrUsuario,vrReal){
+
+let puntos=0;
 let aciertos=0;
-
-const tablaUsuario=document.getElementById("tablaUsuario");
-const tablaReal=document.getElementById("tablaReal");
 
 tablaUsuario.innerHTML="";
 tablaReal.innerHTML="";
 
+const factorSprint = tipoCarrera.value==="sprint" ? 0.5 : 1;
+
+
+
 for(let i=0;i<real.length;i++){
 
-const realP=real[i];
-const usuarioP=usuario[i]?.nombre||"";
+let realData=real[i];
 
-let clase="";
-let puntos=0;
+let realP= typeof realData==="object"
+? realData.piloto
+: realData;
+
+let tiempoReal= typeof realData==="object"
+? realData.tiempo
+: "";
+let usuarioP=usuario[i];
+
+let filaUser=document.createElement("div");
+let filaReal=document.createElement("div");
+
+filaReal.innerHTML=
+`${i+1}. ${realP} ${tiempoReal?`<span class="tiempo">${tiempoReal}</span>`:""}`;
+tablaReal.appendChild(filaReal);
+
+if(!usuarioP){
+filaUser.innerText=`${i+1}. -`;
+tablaUsuario.appendChild(filaUser);
+continue;
+}
+
+let pts=0;
+let clase="fallado";
+
+
+// CLASIFICACION
+if(tipo==="clasificacion"){
 
 if(usuarioP===realP){
 
+if(i===0) pts=4;
+else if(i===1) pts=3;
+else if(i===2) pts=2;
+else if(i<=9) pts=1.5;
+
 clase="acertado";
-
-if(tipo==="clasificacion"){
-
-if(i===0)puntos=4;
-else if(i===1)puntos=3;
-else if(i===2)puntos=2;
-else if(i<=9)puntos=1.5;
-else if(i<=15)puntos=0.6;
-else puntos=0.3;
-
-}else{
-
-if(i===0)puntos=8;
-else if(i===1)puntos=6;
-else if(i===2)puntos=4;
-else if(i<=9)puntos=2;
-else puntos=1;
-
-}
-
 aciertos++;
 
-}else{
+}
 
+if(i>=10 && i<=15){
+if(real.slice(10,16).includes(usuarioP)){
+pts=0.6;
+clase="acertado";
+aciertos++;
+}
+}
+
+if(i>=16){
+if(real.slice(16).includes(usuarioP)){
+pts=0.3;
+clase="acertado";
+aciertos++;
+}
+}
+
+}
+
+
+// CARRERA
+else{
+
+if(esAbandono(tiempoReal)){
+pts=0;
 clase="fallado";
+}
+
+else if(usuarioP===realP){
+
+clase="acertado";
+aciertos++;
+
+if(i===0) pts=8;
+else if(i===1) pts=6;
+else if(i===2) pts=4;
+else if(i<=9) pts=2;
+else pts=1;
 
 }
 
-total+=puntos;
+else if(mismoEquipo(usuarioP,realP)){
 
-const divU=document.createElement("div");
-divU.className=clase;
-divU.innerText=(i+1)+" "+usuarioP;
-tablaUsuario.appendChild(divU);
+clase="compañero";
 
-const divR=document.createElement("div");
-divR.innerText=(i+1)+" "+realP;
-tablaReal.appendChild(divR);
+let base=0;
+
+if(i===0) base=8;
+else if(i===1) base=6;
+else if(i===2) base=4;
+else if(i<=9) base=2;
+else base=1;
+
+pts=base/2;
 
 }
 
-// VR
-const vrContainer=document.getElementById("vrContainer");
+}
 
-if(tipo==="carrera"&&vuelta){
+pts*=factorSprint;
 
-vrContainer.style.display="block";
+puntos+=pts;
 
-const vrUsuarioDiv=document.getElementById("vrUsuario");
-const vrRealDiv=document.getElementById("vrReal");
+filaUser.classList.add(clase);
 
-const vrReal=resultados[gp].carrera.vueltaRapida;
+filaUser.innerHTML=
+`${i+1}. ${usuarioP} ${pts>0?`<span class="pts">+${pts}</span>`:""}`;
 
-vrUsuarioDiv.innerText=vuelta;
-vrUsuarioDiv.style.color=vuelta===vrReal?"#0f5e0f":"#f00";
+tablaUsuario.appendChild(filaUser);
 
-vrRealDiv.innerText=vrReal;
+}
+
+
+// VUELTA RAPIDA
+if(tipo==="carrera" && vrReal){
+
+let filaVRReal=document.createElement("div");
+filaVRReal.innerHTML=`Vuelta rápida: ${vrReal} <span class="tiempo">${vrTiempo}</span>`;
+tablaReal.appendChild(filaVRReal);
+
+let filaVRUser=document.createElement("div");
+
+if(vrUsuario && vrUsuario===vrReal){
+
+let pts=3*factorSprint;
+puntos+=pts;
+aciertos++;
+
+filaVRUser.classList.add("acertado");
+filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
 
 }else{
 
-vrContainer.style.display="none";
+filaVRUser.classList.add("fallado");
+filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario || "-"}`;
 
 }
 
-document.getElementById("puntosContainer").style.display="block";
-document.getElementById("puntosTotales").innerText=total.toFixed(1);
-document.getElementById("cantidadAciertos").innerText=aciertos;
+tablaUsuario.appendChild(filaVRUser);
 
 }
 
-// BOTON CALCULAR
+
+puntosContainer.style.display="block";
+
+puntosTotales.innerText=puntos.toFixed(1)+" puntos";
+totalAciertos.innerText=aciertos+" aciertos";
+
+}
+
+
+// BOTON
 document.getElementById("calcular").addEventListener("click",()=>{
 
 const mensaje=mensajePronostico.value;
-
 const tipo=detectarTipoPronostico(mensaje);
 const gp=gpSelector.value;
 
 if(!mensaje){
-
 alert("Pega el mensaje");
 return;
-
 }
 
 if(!tipo){
-
 alert("No se pudo detectar si es Clasificación o Carrera");
 return;
-
 }
 
 if(!gp){
-
 alert("No se pudo detectar el GP");
 return;
-
 }
-
-mensajePronostico.addEventListener("input",()=>{
-
-const texto = mensajePronostico.value;
-
-const gp = detectarGP(texto);
-
-if(gp){
-
-gpSelector.value = gp;
-
-actualizarSprint(gp);   // ← ESTA LINEA ES LA CLAVE
-
-}
-
-});
 
 const real=tipo==="clasificacion"
 ?resultados[gp].clasificacion.posiciones
 :resultados[gp].carrera.posiciones;
 
-const usuario=parsearMensaje(mensaje,tipo);
+const vrReal=resultados[gp].carrera.vueltaRapida.piloto;
+const vrTiempo=resultados[gp].carrera.vueltaRapida.tiempo;
 
-let vuelta=null;
+const datos=parsearMensaje(mensaje);
 
-if(tipo==="carrera"){
-
-const match=mensaje.match(/Vuelta Rápida\s*([\w\s]+)/i);
-
-if(match)vuelta=match[1].trim();
-
-}
-
-calcularPuntos(usuario,real,tipo,vuelta,gp);
+calcularPuntos(
+datos.pronostico,
+real,
+tipo,
+datos.vueltaRapida,
+vrReal,
+vrTiempo
+);
 
 });
 
+
+// inicializar
 actualizarSprint(gpSelector.value);
