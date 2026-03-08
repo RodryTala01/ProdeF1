@@ -221,7 +221,10 @@ actualizarSprint(gpSelector.value);
 // parser
 function parsearMensaje(texto){
 
-const lineas=texto.split("\n").map(l=>l.trim()).filter(l=>l!=="");
+const lineas=texto
+.split("\n")
+.map(l=>l.replace(/\*/g,"").replace(/\u200E/g,"").trim())
+.filter(l=>l!=="");
 
 let pronostico=[];
 let vueltaRapida=null;
