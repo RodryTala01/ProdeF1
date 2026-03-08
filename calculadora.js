@@ -3,92 +3,36 @@ const gpsConSprint = [
 "china","miami","canada","uk","paisesbajos","singapur"
 ];
 
+
+const carreraHabilitada = false;
 // RESULTADOS
 const resultados={
 
 
 australia:{
 clasificacion:{posiciones:[
-{piloto:"Sergio Pérez", tiempo:"1:15.221"},
-{piloto:"Charles Leclerc", tiempo:"+0.112"},
-{piloto:"Oliver Bearman", tiempo:"+0.240"},
-{piloto:"Lando Norris", tiempo:"+0.351"},
-{piloto:"Oscar Piastri", tiempo:"+0.418"},
-{piloto:"Kimi Antonelli", tiempo:"+0.503"},
-{piloto:"George Russell", tiempo:"+0.587"},
-{piloto:"Max Verstappen", tiempo:"+0.662"},
-{piloto:"Isack Hadjar", tiempo:"+0.741"},
-{piloto:"Lewis Hamilton", tiempo:"+0.803"},
-{piloto:"Valtteri Bottas", tiempo:"+0.912"},
-{piloto:"Gabriel Bortoleto", tiempo:"+1.044"},
-{piloto:"Esteban Ocon", tiempo:"+1.118"},
-{piloto:"Liam Lawson", tiempo:"+1.207"},
-{piloto:"Nico Hülkenberg", tiempo:"+1.292"},
-{piloto:"Arvid Lindblad", tiempo:"+1.344"},
-{piloto:"Fernando Alonso", tiempo:"+1.482"},
-{piloto:"Lance Stroll", tiempo:"+1.566"},
-{piloto:"Carlos Sainz", tiempo:"+1.642"},
-{piloto:"Alexander Albon", tiempo:"+1.721"},
-{piloto:"Pierre Gasly", tiempo:"+1.803"},
-{piloto:"Franco Colapinto", tiempo:"+1.944"}
-]},
-
-carrera:{
-posiciones:[
-{piloto:"Sergio Pérez", tiempo:"1:31:42.221"},
-{piloto:"Lewis Hamilton", tiempo:"+2.441"},
-{piloto:"Charles Leclerc", tiempo:"+5.008"},
-{piloto:"Esteban Ocon", tiempo:"+7.112"},
-{piloto:"Lando Norris", tiempo:"+9.544"},
-{piloto:"George Russell", tiempo:"+12.887"},
-{piloto:"Kimi Antonelli", tiempo:"+16.221"},
-{piloto:"Isack Hadjar", tiempo:"+18.004"},
-{piloto:"Arvid Lindblad", tiempo:"+21.776"},
-{piloto:"Carlos Sainz", tiempo:"+24.338"},
-{piloto:"Alexander Albon", tiempo:"+28.441"},
-{piloto:"Pierre Gasly", tiempo:"+31.115"},
-{piloto:"Fernando Alonso", tiempo:"+35.002"},
-{piloto:"Nico Hülkenberg", tiempo:"+39.887"},
-{piloto:"Valtteri Bottas", tiempo:"+44.110"},
-{piloto:"Oscar Piastri", tiempo:"+48.221"},
-{piloto:"Franco Colapinto", tiempo:"+52.440"},
-{piloto:"Lance Stroll", tiempo:"+58.009"},
-{piloto:"Oliver Bearman", tiempo:"+1:02.887"},
-{piloto:"Max Verstappen", tiempo:"DNF"},
-{piloto:"Gabriel Bortoleto", tiempo:"DNF"},
-{piloto:"Liam Lawson", tiempo:"DNF"}
-],
-vueltaRapida:{
-piloto:"Lewis Hamilton",
-tiempo:"1:20.441"
-}
-}
-},
-
-china:{
-clasificacion:{posiciones:[
-{piloto:"Sergio Pérez", tiempo:"1:15.221"},
-{piloto:"Charles Leclerc", tiempo:"+0.112"},
-{piloto:"Oliver Bearman", tiempo:"+0.240"},
-{piloto:"Lando Norris", tiempo:"+0.351"},
-{piloto:"Oscar Piastri", tiempo:"+0.418"},
-{piloto:"Kimi Antonelli", tiempo:"+0.503"},
-{piloto:"George Russell", tiempo:"+0.587"},
-{piloto:"Max Verstappen", tiempo:"+0.662"},
-{piloto:"Isack Hadjar", tiempo:"+0.741"},
-{piloto:"Lewis Hamilton", tiempo:"+0.803"},
-{piloto:"Valtteri Bottas", tiempo:"+0.912"},
-{piloto:"Gabriel Bortoleto", tiempo:"+1.044"},
-{piloto:"Esteban Ocon", tiempo:"+1.118"},
-{piloto:"Liam Lawson", tiempo:"+1.207"},
-{piloto:"Nico Hülkenberg", tiempo:"+1.292"},
-{piloto:"Arvid Lindblad", tiempo:"+1.344"},
-{piloto:"Fernando Alonso", tiempo:"+1.482"},
-{piloto:"Lance Stroll", tiempo:"+1.566"},
-{piloto:"Carlos Sainz", tiempo:"+1.642"},
-{piloto:"Alexander Albon", tiempo:"+1.721"},
-{piloto:"Pierre Gasly", tiempo:"+1.803"},
-{piloto:"Franco Colapinto", tiempo:"+1.944"}
+{piloto:"George Russel", tiempo:"1:18:518"},
+{piloto:"Kimi Antonelli", tiempo:"1:18:811"},
+{piloto:"Isack Hadjar", tiempo:"1:19:303"},
+{piloto:"Charles Leclerc", tiempo:"1:19:327"},
+{piloto:"Oscar Piastri", tiempo:"1:19:380"},
+{piloto:"Lando Norris", tiempo:"1:19:475"},
+{piloto:"Lewis Hamilton", tiempo:"1:19:478"},
+{piloto:"Liam Lawson", tiempo:"1:19:994"},
+{piloto:"Arvid Lindblad", tiempo:"1:21:247"},
+{piloto:"Gabriel Bortoleto", tiempo:"-"},
+{piloto:"Nico Hülkenberg", tiempo:"1:20:303"},
+{piloto:"Oliver Bearman", tiempo:"1:20:311"},
+{piloto:"Esteban Ocon", tiempo:"1:20:491"},
+{piloto:"Pierre Gasly", tiempo:"1:20:501"},
+{piloto:"Alexander Albon", tiempo:"1:20:941"},
+{piloto:"Franco Colapinto", tiempo:"1:21:270"},
+{piloto:"Fernando Alonso", tiempo:"1:21:969"},
+{piloto:"Sergio Pérez", tiempo:"1:22:605"},
+{piloto:"Valtteri Bottas", tiempo:"1:23:244"},
+{piloto:"Max Verstappen", tiempo:"-"},
+{piloto:"Carlos Sainz", tiempo:"-"},
+{piloto:"Lance Stroll", tiempo:"-"}
 ]},
 
 carrera:{
@@ -122,12 +66,12 @@ tiempo:"1:20.441"
 }
 }
 }
-};
+}
 
 
 // EQUIPOS
 const equipos={
-"Sergio Pérez":"Red Bull",
+"Sergio Pérez":"Cadillac",
 "Charles Leclerc":"Ferrari",
 "Oliver Bearman":"Haas",
 "Lando Norris":"McLaren",
@@ -136,14 +80,14 @@ const equipos={
 "George Russell":"Mercedes",
 "Max Verstappen":"Red Bull",
 "Isack Hadjar":"Red Bull",
-"Lewis Hamilton":"Mercedes",
+"Lewis Hamilton":"Ferrari",
 "Valtteri Bottas":"Cadillac",
 "Gabriel Bortoleto":"Audi",
 "Esteban Ocon":"Haas",
 "Liam Lawson":"Visacash",
 "Nico Hülkenberg":"Audi",
 "Arvid Lindblad":"Visacash",
-"Fernando Alonso":"Alpine",
+"Fernando Alonso":"Aston Martin",
 "Lance Stroll":"Aston Martin",
 "Carlos Sainz":"Williams",
 "Alexander Albon":"Williams",
@@ -164,6 +108,17 @@ const puntosTotales=document.getElementById("puntosTotales");
 const totalAciertos=document.getElementById("totalAciertos");
 const puntosContainer=document.getElementById("puntosContainer");
 
+mensajePronostico.addEventListener("input",()=>{
+puntosContainer.style.display="none";
+});
+
+gpSelector.addEventListener("change",()=>{
+puntosContainer.style.display="none";
+});
+
+tipoCarrera.addEventListener("change",()=>{
+puntosContainer.style.display="none";
+});
 
 // detectar tipo
 function detectarTipoPronostico(texto){
@@ -273,8 +228,12 @@ let vueltaRapida=null;
 
 for(let l of lineas){
 
-if(l.startsWith("Vuelta")){
-vueltaRapida=l.replace(/Vuelta rápida:?/i,"").trim();
+if(l.toLowerCase().includes("vuelta rápida")){
+continue;
+}
+
+if(pronostico.length>=22 && !vueltaRapida){
+vueltaRapida=l.trim();
 continue;
 }
 
@@ -299,7 +258,16 @@ return {pronostico,vueltaRapida};
 
 // mismo equipo
 function mismoEquipo(a,b){
-return equipos[a] && equipos[a]===equipos[b];
+
+if(!a || !b) return false;
+
+const pa=a.trim();
+const pb=b.trim();
+
+if(!equipos[pa] || !equipos[pb]) return false;
+
+return equipos[pa]===equipos[pb];
+
 }
 
 
@@ -307,10 +275,12 @@ return equipos[a] && equipos[a]===equipos[b];
 function calcularPuntos(usuario,real,tipo,vrUsuario,vrReal,vrTiempo){
 
 let puntos=0;
-let aciertos=0;
+let aciertosExactos=0;
+let aciertosParciales=0;
 
 tablaUsuario.innerHTML="";
 tablaReal.innerHTML="";
+puntosContainer.style.display="none";
 
 const factorSprint = tipoCarrera.value==="sprint" ? 0.5 : 1;
 
@@ -359,24 +329,32 @@ else if(i===2) pts=2;
 else if(i<=9) pts=1.5;
 
 clase="acertado";
-aciertos++;
+aciertosExactos++;
 
 }
 
 if(i>=10 && i<=15){
-if(real.slice(10,16).includes(usuarioP)){
+
+const pilotosQ2 = real.slice(10,16).map(p=>p.piloto);
+
+if(pilotosQ2.includes(usuarioP)){
 pts=0.6;
 clase="acertado";
-aciertos++;
+aciertosExactos++;
 }
+
 }
 
 if(i>=16){
-if(real.slice(16).includes(usuarioP)){
+
+const pilotosQ1 = real.slice(16).map(p=>p.piloto);
+
+if(pilotosQ1.includes(usuarioP)){
 pts=0.3;
 clase="acertado";
-aciertos++;
+aciertosExactos++;
 }
+
 }
 
 }
@@ -393,7 +371,7 @@ clase="fallado";
 else if(usuarioP===realP){
 
 clase="acertado";
-aciertos++;
+aciertosExactos++;
 
 if(i===0) pts=8;
 else if(i===1) pts=6;
@@ -406,6 +384,7 @@ else pts=1;
 else if(mismoEquipo(usuarioP,realP)){
 
 clase="compañero";
+aciertosParciales++;
 
 let base=0;
 
@@ -436,27 +415,50 @@ tablaUsuario.appendChild(filaUser);
 
 
 // VUELTA RAPIDA
+// VUELTA RAPIDA
 if(tipo==="carrera" && vrReal){
 
 let filaVRReal=document.createElement("div");
-filaVRReal.innerHTML=`Vuelta rápida: ${vrReal} <span class="tiempo">${vrTiempo}</span>`;
+filaVRReal.innerHTML=`⚡ Vuelta rápida: ${vrReal} <span class="tiempo">${vrTiempo}</span>`;
 tablaReal.appendChild(filaVRReal);
 
 let filaVRUser=document.createElement("div");
 
-if(vrUsuario && vrUsuario===vrReal){
+if(vrUsuario){
+
+if(vrUsuario===vrReal){
 
 let pts=3*factorSprint;
 puntos+=pts;
-aciertos++;
+aciertosExactos++;
 
 filaVRUser.classList.add("acertado");
 filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
 
+}
+
+else if(mismoEquipo(vrUsuario,vrReal)){
+
+let pts=1.5*factorSprint;
+puntos+=pts;
+aciertosParciales++;
+
+filaVRUser.classList.add("compañero");
+filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
+
+}
+
+else{
+
+filaVRUser.classList.add("fallado");
+filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario}`;
+
+}
+
 }else{
 
 filaVRUser.classList.add("fallado");
-filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario || "-"}`;
+filaVRUser.innerHTML=`⚡ Vuelta rápida: -`;
 
 }
 
@@ -468,7 +470,8 @@ tablaUsuario.appendChild(filaVRUser);
 puntosContainer.style.display="block";
 
 puntosTotales.innerText=puntos.toFixed(1)+" puntos";
-totalAciertos.innerText=aciertos+" aciertos";
+totalAciertos.innerText=
+aciertosExactos+" exactos • "+aciertosParciales+" parciales";
 
 }
 
@@ -476,6 +479,7 @@ totalAciertos.innerText=aciertos+" aciertos";
 // BOTON
 document.getElementById("calcular").addEventListener("click",()=>{
 
+try{
 const mensaje=mensajePronostico.value;
 const tipo=detectarTipoPronostico(mensaje);
 const gp=gpSelector.value;
@@ -492,6 +496,24 @@ return;
 
 if(!gp){
 alert("No se pudo detectar el GP");
+return;
+}
+
+// SI NO HAY RESULTADOS CARGADOS PARA ESE GP
+if(!resultados[gp]){
+alert("Todavía no hay resultados cargados para este GP");
+return;
+}
+
+// BLOQUEAR QUALY SI NO EXISTE
+if(tipo==="clasificacion" && !resultados[gp].clasificacion){
+alert("La clasificación todavía no se corrió");
+return;
+}
+
+// BLOQUEAR CARRERA SI NO EXISTE
+if(tipo==="carrera" && !resultados[gp].carrera){
+alert("La carrera todavía no se corrió");
 return;
 }
 
@@ -513,7 +535,13 @@ vrReal,
 vrTiempo
 );
 
+}catch(e){
+console.error(e);
+alert("Hubo un error al calcular");
+}
+
 });
+
 
 function etiquetaQualy(i){
 
