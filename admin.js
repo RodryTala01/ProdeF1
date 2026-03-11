@@ -41,12 +41,12 @@ jugadores.push({
 
 nombre:nombreRaw,
 gp:gpGanados,
-puntos:parseFloat(partes[1]),
+puntos:parseFloat(partes[1].replace(",", ".")),
 plenos:parseInt(partes[2]),
 parciales:parseInt(partes[3]),
 errores:parseInt(partes[4]),
-puntosQ:parseInt(partes[5]),
-puntosC:parseInt(partes[6])
+puntosQ:parseFloat(partes[5].replace(",", ".")),
+puntosC:parseFloat(partes[6].replace(",", "."))
 
 });
 
