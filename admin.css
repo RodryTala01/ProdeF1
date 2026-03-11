@@ -1,0 +1,227 @@
+body{
+
+font-family:Arial, Helvetica, sans-serif;
+background:#0f1116;
+color:white;
+
+margin:0;
+padding:20px;
+
+}
+
+.container{
+
+max-width:900px;
+margin:auto;
+
+}
+
+textarea{
+
+width:100%;
+height:200px;
+
+padding:10px;
+margin-top:10px;
+
+background:#151922;
+color:white;
+
+border:1px solid #2a2f3a;
+border-radius:6px;
+
+}
+
+button{
+
+margin-top:15px;
+
+padding:10px 20px;
+
+background:#e10600;
+border:none;
+
+color:white;
+font-weight:bold;
+
+border-radius:6px;
+cursor:pointer;
+
+}
+
+table{
+
+width:100%;
+margin-top:20px;
+
+border-collapse:collapse;
+
+}
+
+th,td{
+
+padding:8px;
+border-bottom:1px solid #2a2f3a;
+
+text-align:left;
+
+}
+
+th{
+
+background:#151922;
+
+}
+
+/* columnas numéricas */
+
+.num{
+text-align:center;
+font-weight:bold;
+width:70px;
+}
+
+.pos{
+text-align:center;
+width:40px;
+font-weight:bold;
+}
+
+.pts{
+
+text-align:center;
+font-weight:800;
+font-size:20px;
+letter-spacing:0.5px;
+width:80px;
+color:white;
+text-shadow:
+-1px -1px 0 #e10600,
+1px -1px 0 #e10600,
+-1px 1px 0 #e10600,
+1px 1px 0 #e10600;
+
+}
+
+.num,
+.pts,
+.pos{
+text-align:center;
+vertical-align:middle;
+}
+
+/* participante */
+
+.participante{
+padding-left:6px;
+}
+
+/* jugador con escudo */
+
+.jugador{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+}
+
+/* escudo */
+
+.escudo{
+
+width:35px;
+aspect-ratio:1/1;
+object-fit:contain;
+flex-shrink:0;
+
+}
+
+.trofeos{
+
+display:flex;
+gap:3px;
+margin-left:6px;
+
+}
+
+.trofeo{
+
+width:35px;
+aspect-ratio:1/1;
+object-fit:contain;
+flex-shrink:0;
+
+}
+
+.header-prode{
+
+text-align:center;
+margin-bottom:25px;
+
+}
+
+.header-linea{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+}
+
+.titulotabla{
+
+margin:0;
+font-size:30px;
+font-weight:800;
+
+}
+
+.subtitulotabla{
+
+margin:2px 0 0 0;
+font-size:18px;
+font-weight:500;
+
+}
+
+.contBandera{
+
+width:115px;
+height: auto;
+}
+
+.bandera{
+    width: 100%;
+    height: 100%;
+}
+
+
+.contPista{
+
+width:130px;
+height: auto;
+}
+
+.pista{
+    width: 100%;
+    height: 100%;
+}
+
+.titulotabla{
+    text-shadow:
+-1px -1px 0 #e10600,
+1px -1px 0 #e10600,
+-1px 1px 0 #e10600,
+1px 1px 0 #e10600;
+}
+
+.subtitulotabla{
+    text-shadow:
+-1px -1px 0 #e10600,
+1px -1px 0 #e10600,
+-1px 1px 0 #e10600,
+1px 1px 0 #e10600;
+}
+

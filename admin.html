@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin F1</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+
+<body>
+
+    
+
+<div class="container">
+
+<h1>Administrador Prode F1</h1>
+
+<label>Pegar tabla de Excel:</label>
+
+<textarea id="inputDatos" placeholder="Pegá la tabla acá"></textarea>
+
+<button id="generar">Generar tabla</button>
+
+<div id="exportarImagen">
+
+<div class="header-prode">
+
+<div class="header-linea">
+
+<div class="contBandera"><img src="image/australia.png" class="bandera"></div>
+
+<div>
+<h1 class="titulotabla">Prode Fórmula 1 2026</h1>
+<h2 class="subtitulotabla">GP 1/24 – Australia</h2>
+</div>
+
+<div class="contPista"><img src="image/circuitos/australia.png" class="pista"></div>
+
+</div>
+
+</div>
+
+<div id="tablaContainer"></div>
+
+</div>
+<button id="descargar">Descargar imagen</button>
+
+</div>
+
+<script src="admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</body>
+</html>

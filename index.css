@@ -128,3 +128,11 @@ border-color:#b1ae09;
 .calculadora:hover{
 background:#5f770a;
 }
+
+.admin{
+border-color:#5c5c5c;
+}
+
+.admin:hover{
+background:#000000;
+}   

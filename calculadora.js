@@ -36,7 +36,6 @@ clasificacion:{posiciones:[
 ]},
 
 carrera:{
-posiciones:carrera:
 posiciones:[
 {piloto:"George Russell", tiempo:"1:23:06.801"},
 {piloto:"Kimi Antonelli", tiempo:"+2.974"},
@@ -425,7 +424,7 @@ tablaUsuario.appendChild(filaUser);
 if(tipo==="carrera" && vrReal){
 
 let filaVRReal=document.createElement("div");
-filaVRReal.innerHTML=`⚡ Vuelta rápida: ${vrReal} <span class="tiempo">${vrTiempo}</span>`;
+filaVRReal.innerHTML=`Vuelta rápida: ${vrReal} <span class="tiempo">${vrTiempo}</span>`;
 tablaReal.appendChild(filaVRReal);
 
 let filaVRUser=document.createElement("div");
@@ -439,7 +438,7 @@ puntos+=pts;
 aciertosExactos++;
 
 filaVRUser.classList.add("acertado");
-filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
+filaVRUser.innerHTML=`Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
 
 }
 
@@ -450,21 +449,21 @@ puntos+=pts;
 aciertosParciales++;
 
 filaVRUser.classList.add("compañero");
-filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
+filaVRUser.innerHTML=`Vuelta rápida: ${vrUsuario} <span class="pts">+${pts}</span>`;
 
 }
 
 else{
 
 filaVRUser.classList.add("fallado");
-filaVRUser.innerHTML=`⚡ Vuelta rápida: ${vrUsuario}`;
+filaVRUser.innerHTML=`Vuelta rápida: ${vrUsuario}`;
 
 }
 
 }else{
 
 filaVRUser.classList.add("fallado");
-filaVRUser.innerHTML=`⚡ Vuelta rápida: -`;
+filaVRUser.innerHTML=`Vuelta rápida: -`;
 
 }
 
@@ -523,6 +522,9 @@ alert("La carrera todavía no se corrió");
 return;
 }
 
+
+
+
 const real=tipo==="clasificacion"
 ?resultados[gp].clasificacion.posiciones
 :resultados[gp].carrera.posiciones;
@@ -531,6 +533,14 @@ const vrReal=resultados[gp].carrera.vueltaRapida.piloto;
 const vrTiempo=resultados[gp].carrera.vueltaRapida.tiempo;
 
 const datos=parsearMensaje(mensaje);
+
+const errorPilotos = validarPilotos(datos.pronostico);
+
+if(errorPilotos){
+alert(errorPilotos);
+return;
+}
+
 
 calcularPuntos(
 datos.pronostico,
@@ -559,6 +569,48 @@ if(i>=16) return "Q1";
 
 }
 
+function normalizar(nombre){
+
+return nombre
+.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"")
+.trim();
+
+}
+
+function validarPilotos(pronostico){
+
+const pilotosOficiales = Object.keys(equipos).map(p => normalizar(p));
+
+const pilotosUsuario = pronostico.map(p => normalizar(p));
+
+if(pilotosUsuario.length !== 22){
+return "El pronóstico debe tener exactamente 22 pilotos.";
+}
+
+const setUsuario = new Set(pilotosUsuario);
+
+if(setUsuario.size !== 22){
+return "Hay pilotos repetidos.";
+}
+
+for(let p of pilotosUsuario){
+if(!pilotosOficiales.includes(p)){
+return "Hay pilotos que no existen en la lista oficial.";
+}
+}
+
+for(let p of pilotosOficiales){
+if(!pilotosUsuario.includes(p)){
+return "Faltan pilotos en el pronóstico.";
+}
+}
+
+return null;
+}
+
 
 // inicializar
 actualizarSprint(gpSelector.value);
+
