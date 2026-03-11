@@ -1,7 +1,7 @@
 const input = document.getElementById("inputDatos");
 const generar = document.getElementById("generar");
 const tablaContainer = document.getElementById("tablaContainer");
-const copiarBtn = document.getElementById("copiar");
+const descargarBtn = document.getElementById("descargar");
 
 generar.addEventListener("click",()=>{
 
@@ -25,7 +25,7 @@ for(let i=1;i<lineas.length;i++){
 
 const partes = lineas[i].split("\t");
 
-if(partes.length < 5) continue;
+if(partes.length < 7) continue;
 
 let nombreRaw = partes[0];
 let gpGanados = 0;
@@ -44,7 +44,9 @@ gp:gpGanados,
 puntos:parseFloat(partes[1]),
 plenos:parseInt(partes[2]),
 parciales:parseInt(partes[3]),
-errores:parseInt(partes[4])
+errores:parseInt(partes[4]),
+puntosQ:parseInt(partes[5]),
+puntosC:parseInt(partes[6])
 
 });
 
@@ -72,33 +74,15 @@ return a.errores - b.errores;
 
 });
 
-const descargarBtn = document.getElementById("descargar");
 
-descargarBtn.addEventListener("click", ()=>{
 
-const area = document.getElementById("exportarImagen");
 
-html2canvas(area,{
-scale:2,
-useCORS:true,
-allowTaint:true,
-backgroundColor:null
-}).then(canvas=>{
-
-const link = document.createElement("a");
-
-link.download = "prode-f1.png";
-link.href = canvas.toDataURL("image/png");
-
-link.click();
-
-});
-
-});
 
 generarTabla(jugadores);
 
 });
+
+
 
 function generarTabla(jugadores){
 
@@ -109,9 +93,11 @@ html += `
 <th>#</th>
 <th>Participante</th>
 <th class="pts">PTS</th>
-<th class="num">PL</th>
-<th class="num">PR</th>
-<th class="num">ER</th>
+<th class="num">🟢</th>
+<th class="num">🟡</th>
+<th class="num">🔴</th>
+<th class="num">PTS Q</th>
+<th class="num">PTS C</th>
 </tr>
 `;
 
@@ -129,13 +115,13 @@ html += `
 <td class="pos">${i+1}</td>
 
 <td class="participante">
-<div class="jugador contEscudo">
-
+<div class="jugador">
+<div class="contEscudo">
 <img class="escudo" src="image/escudos/${j.nombre}.png" onerror="this.src='image/escudos/default.png'">
-
+</div>
 <span class="nombre">${j.nombre}</span>
 
-<div class="contTrofeo"><span class="trofeos">${trofeos}</span></div>
+<div class="trofeos">${trofeos}</div>
 
 </div>
 </td>
@@ -144,7 +130,8 @@ html += `
 <td class="num">${j.plenos}</td>
 <td class="num">${j.parciales}</td>
 <td class="num">${j.errores}</td>
-
+<td class="num">${j.puntosQ}</td>
+<td class="num">${j.puntosC}</td>
 </tr>
 `;
 
@@ -154,19 +141,31 @@ html += "</table>";
 
 tablaContainer.innerHTML = html;
 
-copiarBtn.style.display="inline-block";
+
 
 }
 
-copiarBtn.addEventListener("click",()=>{
 
-const texto = tablaContainer.innerText;
 
-navigator.clipboard.writeText(texto);
 
-alert("Tabla copiada");
+descargarBtn.addEventListener("click", ()=>{
+
+const area = document.getElementById("exportarImagen");
+
+html2canvas(area,{
+scale:2,
+useCORS:true,
+allowTaint:true,
+backgroundColor:"#0f1116"
+}).then(canvas=>{
+
+const link = document.createElement("a");
+
+link.download = "prode-f1.png";
+link.href = canvas.toDataURL("image/png");
+
+link.click();
 
 });
 
-
-
+});

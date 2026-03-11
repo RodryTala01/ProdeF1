@@ -128,30 +128,33 @@ gap:8px;
 
 /* escudo */
 
-.escudo{
+
+.contEscudo{
 
 width:35px;
-aspect-ratio:1/1;
-object-fit:contain;
-flex-shrink:0;
+height: auto;
+
+}
+
+.escudo{
+
+width:100%;
 
 }
 
 .trofeos{
 
 display:flex;
-gap:3px;
-margin-left:6px;
+width:25px;
+height: auto;
 
 }
 
-.trofeo{
 
-width:35px;
-aspect-ratio:1/1;
-object-fit:contain;
-flex-shrink:0;
-
+.trofeo {
+    height: 100%;
+    width: 100%;
+    margin-left: 4px;
 }
 
 .header-prode{

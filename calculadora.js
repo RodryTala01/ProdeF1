@@ -45,7 +45,7 @@ posiciones:[
 {piloto:"Max Verstappen", tiempo:"+54.617"},
 {piloto:"Oliver Bearman", tiempo:"+1 vuelta"},
 {piloto:"Arvid Lindblad", tiempo:"+1 vuelta"},
-{piloto:"Gabriel Bortole    to", tiempo:"+1 vuelta"},
+{piloto:"Gabriel Bortoleto", tiempo:"+1 vuelta"},
 {piloto:"Pierre Gasly", tiempo:"+1 vuelta"},
 {piloto:"Esteban Ocon", tiempo:"+1 vuelta"},
 {piloto:"Alexander Albon", tiempo:"+1 vuelta"},
