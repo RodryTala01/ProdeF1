@@ -11,7 +11,7 @@ const resultados={
 
 australia:{
 clasificacion:{posiciones:[
-{piloto:"George Russel", tiempo:"1:18:518"},
+{piloto:"George Russell", tiempo:"1:18:518"},
 {piloto:"Kimi Antonelli", tiempo:"1:18:811"},
 {piloto:"Isack Hadjar", tiempo:"1:19:303"},
 {piloto:"Charles Leclerc", tiempo:"1:19:327"},
@@ -36,36 +36,39 @@ clasificacion:{posiciones:[
 ]},
 
 carrera:{
+posiciones:carrera:
 posiciones:[
-{piloto:"Sergio Pérez", tiempo:"1:31:42.221"},
-{piloto:"Lewis Hamilton", tiempo:"+2.441"},
-{piloto:"Charles Leclerc", tiempo:"+5.008"},
-{piloto:"Esteban Ocon", tiempo:"+7.112"},
-{piloto:"Lando Norris", tiempo:"+9.544"},
-{piloto:"George Russell", tiempo:"+12.887"},
-{piloto:"Kimi Antonelli", tiempo:"+16.221"},
-{piloto:"Isack Hadjar", tiempo:"+18.004"},
-{piloto:"Arvid Lindblad", tiempo:"+21.776"},
-{piloto:"Carlos Sainz", tiempo:"+24.338"},
-{piloto:"Alexander Albon", tiempo:"+28.441"},
-{piloto:"Pierre Gasly", tiempo:"+31.115"},
-{piloto:"Fernando Alonso", tiempo:"+35.002"},
-{piloto:"Nico Hülkenberg", tiempo:"+39.887"},
-{piloto:"Valtteri Bottas", tiempo:"+44.110"},
-{piloto:"Oscar Piastri", tiempo:"+48.221"},
-{piloto:"Franco Colapinto", tiempo:"+52.440"},
-{piloto:"Lance Stroll", tiempo:"+58.009"},
-{piloto:"Oliver Bearman", tiempo:"+1:02.887"},
-{piloto:"Max Verstappen", tiempo:"DNF"},
-{piloto:"Gabriel Bortoleto", tiempo:"DNF"},
-{piloto:"Liam Lawson", tiempo:"DNF"}
+{piloto:"George Russell", tiempo:"1:23:06.801"},
+{piloto:"Kimi Antonelli", tiempo:"+2.974"},
+{piloto:"Charles Leclerc", tiempo:"+15.519"},
+{piloto:"Lewis Hamilton", tiempo:"+16.143"},
+{piloto:"Lando Norris", tiempo:"+51.741"},
+{piloto:"Max Verstappen", tiempo:"+54.617"},
+{piloto:"Oliver Bearman", tiempo:"+1 vuelta"},
+{piloto:"Arvid Lindblad", tiempo:"+1 vuelta"},
+{piloto:"Gabriel Bortole    to", tiempo:"+1 vuelta"},
+{piloto:"Pierre Gasly", tiempo:"+1 vuelta"},
+{piloto:"Esteban Ocon", tiempo:"+1 vuelta"},
+{piloto:"Alexander Albon", tiempo:"+1 vuelta"},
+{piloto:"Liam Lawson", tiempo:"+1 vuelta"},
+{piloto:"Franco Colapinto", tiempo:"+2 vueltas"},
+{piloto:"Carlos Sainz", tiempo:"+2 vueltas"},
+{piloto:"Sergio Pérez", tiempo:"+3 vueltas"},
+{piloto:"Lance Stroll", tiempo:"NC"},
+{piloto:"Fernando Alonso", tiempo:"DNF"},
+{piloto:"Valtteri Bottas", tiempo:"DNF"},
+{piloto:"Isack Hadjar", tiempo:"DNF"},
+{piloto:"Oscar Piastri", tiempo:"DNF"},
+{piloto:"Nico Hülkenberg", tiempo:"DNF"}
 ],
 vueltaRapida:{
-piloto:"Lewis Hamilton",
-tiempo:"1:20.441"
+piloto:"Max Verstappen",
+tiempo:"1:22.091"
 }
 }
 }
+
+
 }
 
 
