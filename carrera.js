@@ -1,6 +1,7 @@
-const circuitoNombre = "GP 1/24: Australia Albert Park";
-const circuitoImagen = "image/circuitos/australia.png";
-const horarioCarrera = "Domingo 8 de Marzo 01:00 AM";
+const circuitoNombre = "GP 2/24: China, Shanghái";
+const circuitoImagen = "image/circuitos/china.png";
+const horarioSprint = "SPRINT: Sábado 14 de Marzo, 00:01 AM";
+const horarioCarrera = "CARRERA: Domingo 15 de Marzo 04:00 AM";
 
 const pilotos=[
 
@@ -61,6 +62,7 @@ let vueltaRapida=null;
 
 document.getElementById("circuito-nombre").innerText=circuitoNombre;
 document.querySelectorAll(".circuito-img").forEach(img=>img.src=circuitoImagen);
+document.getElementById("horarioS").innerText = horarioSprint;
 document.getElementById("horario").innerText = horarioCarrera;
 
 pilotos.sort((a,b)=>a.equipo.localeCompare(b.equipo));
