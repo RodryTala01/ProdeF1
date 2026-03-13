@@ -65,7 +65,7 @@ piloto:"Max Verstappen",
 tiempo:"1:22.091"
 }
 }
-}
+},
 
   
 china:{
