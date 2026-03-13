@@ -69,7 +69,7 @@ tiempo:"1:22.091"
 
   
 china:{
-clasificacionSprint:{posiciones:[
+sprintClasificacion:{posiciones:[
 {piloto:"George Russell", tiempo:"1:31.520"},
 {piloto:"Kimi Antonelli", tiempo:"1:31.809"},
 {piloto:"Lando Norris", tiempo:"1:32.141"},
