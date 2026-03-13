@@ -93,6 +93,8 @@ sprintClasificacion:{posiciones:[
 {piloto:"Valtteri Bottas", tiempo:"1:37.378"},
 {piloto:"Sergio Pérez", tiempo:"-"}
 ]},
+}
+
 
 
 
