@@ -1,7 +1,7 @@
-const circuitoNombre = "GP 2/24: China, Shanghái";
-const circuitoImagen = "image/circuitos/china.png";
-const horarioSprint = "Qualy SPRINT: Viernes 13 de Marzo, 04:30 AM";
-const horarioCarrera = "Qualy CARRERA: Sábado 14 de Marzo, 04:00 AM";
+const circuitoNombre = "GP 3/24: Japón, Suzuka";
+const circuitoImagen = "image/circuitos/japon.png";
+const horarioSprint = ""
+const horarioCarrera = "SPRINT: Sábado 28 de Marzo, 03:00 AM";
 
 const pilotos=[
 
