@@ -93,6 +93,88 @@ sprintClasificacion:{posiciones:[
 {piloto:"Valtteri Bottas", tiempo:"1:37.378"},
 {piloto:"Sergio Pérez", tiempo:"-"}
 ]},
+sprintCarrera:{posiciones:[
+{piloto:"George Russell", tiempo:"33:38.998"},
+{piloto:"Charles Leclerc", tiempo:"+0.674s"},
+{piloto:"Lewis Hamilton", tiempo:"+2.554s"},
+{piloto:"Lando Norris", tiempo:"+4.433s"},
+{piloto:"Kimi Antonelli", tiempo:"+5.688s"},
+{piloto:"Oscar Piastri", tiempo:"+6.809s"},
+{piloto:"Liam Lawson", tiempo:"+10.900s"},
+{piloto:"Oliver Bearman", tiempo:"+11.271s"},
+{piloto:"Max Verstappen", tiempo:"+11.619s"},
+{piloto:"Esteban Ocon", tiempo:"+13.887s"},
+{piloto:"Pierre Gasly", tiempo:"+14.780s"},
+{piloto:"Carlos Sainz", tiempo:"+15.753s"},
+{piloto:"Gabriel Bortoleto", tiempo:"+15.858s"},
+{piloto:"Franco Colapinto", tiempo:"+16.393s"},
+{piloto:"Isack Hadjar", tiempo:"+16.430s"},
+{piloto:"Alexander Albon", tiempo:"+20.014s"},
+{piloto:"Fernando Alonso", tiempo:"+21.599s"},
+{piloto:"Lance Stroll", tiempo:"+21.971s"},
+{piloto:"Sergio Pérez", tiempo:"+28.241s"},
+{piloto:"Nico Hülkenberg", tiempo:"DNF"},
+{piloto:"Valtteri Bottas", tiempo:"DNF"},
+{piloto:"Arvid Lindblad", tiempo:"DNF"}
+],
+vueltaRapida:{
+piloto:"Charles Leclerc",
+tiempo:"1:33.402"
+}},
+clasificacion:{posiciones:[
+{piloto:"Kimi Antonelli", tiempo:"1:32.064"},
+{piloto:"George Russell", tiempo:"1:32.286"},
+{piloto:"Lewis Hamilton", tiempo:"1:32.415"},
+{piloto:"Charles Leclerc", tiempo:"1:32.428"},
+{piloto:"Oscar Piastri", tiempo:"1:32.550"},
+{piloto:"Lando Norris", tiempo:"1:32.608"},
+{piloto:"Pierre Gasly", tiempo:"1:32.873"},
+{piloto:"Max Verstappen", tiempo:"1:33.002"},
+{piloto:"Isack Hadjar", tiempo:"1:33.121"},
+{piloto:"Oliver Bearman", tiempo:"1:33.292"},
+{piloto:"Nico Hülkenberg", tiempo:"1:33.354"},
+{piloto:"Franco Colapinto", tiempo:"1:33.357"},
+{piloto:"Esteban Ocon", tiempo:"1:33.538"},
+{piloto:"Liam Lawson", tiempo:"1:33.765"},
+{piloto:"Arvid Lindblad", tiempo:"1:33.784"},
+{piloto:"Gabriel Bortoleto", tiempo:"1:33.965"},
+{piloto:"Carlos Sainz", tiempo:"1:34.317"},
+{piloto:"Alexander Albon", tiempo:"1:34.772"},
+{piloto:"Fernando Alonso", tiempo:"1:35.203"},
+{piloto:"Valtteri Bottas", tiempo:"1:35.436"},
+{piloto:"Lance Stroll", tiempo:"1:35.995"},
+{piloto:"Sergio Pérez", tiempo:"1:36.906"}
+]},
+carrera:{
+posiciones:[
+{piloto:"Kimi Antonelli", tiempo:"1:33:15.607"},
+{piloto:"George Russell", tiempo:"+5.515s"},
+{piloto:"Lewis Hamilton", tiempo:"+25.267s"},
+{piloto:"Charles Leclerc", tiempo:"+28.894s"},
+{piloto:"Oliver Bearman", tiempo:"+57.268s"},
+{piloto:"Pierre Gasly", tiempo:"+59.647s"},
+{piloto:"Liam Lawson", tiempo:"+80.588s"},
+{piloto:"Isack Hadjar", tiempo:"+87.247s"},
+{piloto:"Carlos Sainz", tiempo:"+1 vuelta"},
+{piloto:"Franco Colapinto", tiempo:"+1 vuelta"},
+{piloto:"Nico Hülkenberg", tiempo:"+1 vuelta"},
+{piloto:"Arvid Lindblad", tiempo:"+1 vuelta"},
+{piloto:"Valtteri Bottas", tiempo:"+1 vuelta"},
+{piloto:"Esteban Ocon", tiempo:"+1 vuelta"},
+{piloto:"Sergio Pérez", tiempo:"+1 vuelta"},
+{piloto:"Max Verstappen", tiempo:"DNF"},
+{piloto:"Fernando Alonso", tiempo:"DNF"},
+{piloto:"Lance Stroll", tiempo:"DNF"},
+{piloto:"Oscar Piastri", tiempo:"DNS"},
+{piloto:"Lando Norris", tiempo:"DNS"},
+{piloto:"Gabriel Bortoleto", tiempo:"DNS"},
+{piloto:"Alexander Albon", tiempo:"DNS"}
+],
+vueltaRapida:{
+piloto:"Kimi Antonelli",
+tiempo:"1:35.275"
+}
+},
 }
 
 
@@ -442,7 +524,7 @@ puntos+=pts;
 filaUser.classList.add(clase);
 
 filaUser.innerHTML=
-`${etiqueta}. ${usuarioP} ${pts>0?`<span class="pts">+${pts.toFixed(1)}</span>`:""}`;
+`${etiqueta}. ${usuarioP} ${pts>0?`<span class="pts">+${pts.toFixed(2)}</span>`:""}`;
 
 tablaUsuario.appendChild(filaUser);
 
@@ -504,7 +586,7 @@ tablaUsuario.appendChild(filaVRUser);
 
 puntosContainer.style.display="block";
 
-puntosTotales.innerText=puntos.toFixed(1)+" puntos";
+puntosTotales.innerText=puntos.toFixed(2)+" puntos";
 totalAciertos.innerText=
 aciertosExactos+" exactos • "+aciertosParciales+" parciales";
 
@@ -541,25 +623,40 @@ return;
 }
 
 // BLOQUEAR QUALY SI NO EXISTE
-if(tipo==="clasificacion" && !resultados[gp].clasificacion){
-alert("La clasificación todavía no se corrió");
-return;
-}
-
-// BLOQUEAR CARRERA SI NO EXISTE
-if(tipo==="carrera" && !resultados[gp].carrera){
-alert("La carrera todavía no se corrió");
-return;
-}
-
-
-
-
+const esSprint = tipoCarrera.value === "sprint";
 let real;
 let vrReal=null;
 let vrTiempo=null;
 
-const esSprint = tipoCarrera.value === "sprint";
+
+if(tipo==="clasificacion"){ 
+  if(esSprint && !resultados[gp].sprintClasificacion){
+    alert("La clasificación sprint todavía no se corrió");
+    return;
+  }
+  if(!esSprint && !resultados[gp].clasificacion){
+    alert("La clasificación todavía no se corrió");
+    return;
+  }
+}
+
+// BLOQUEAR CARRERA SI NO EXISTE
+if(tipo==="carrera"){
+  if(esSprint && !resultados[gp].sprintCarrera){
+    alert("La sprint todavía no se corrió");
+    return;
+  }
+  if(!esSprint && !resultados[gp].carrera){
+    alert("La carrera todavía no se corrió");
+    return;
+  }
+}
+
+
+
+
+
+
 
 if(tipo==="clasificacion"){
 real = esSprint
@@ -568,14 +665,22 @@ real = esSprint
 }
 
 if(tipo==="carrera"){
-real = esSprint
-? resultados[gp].sprintCarrera.posiciones
-: resultados[gp].carrera.posiciones;
+  if(esSprint){
+    real = resultados[gp].sprintCarrera.posiciones;
 
-if(!esSprint){
-vrReal = resultados[gp].carrera.vueltaRapida.piloto;
-vrTiempo = resultados[gp].carrera.vueltaRapida.tiempo;
-}
+    if(resultados[gp].sprintCarrera.vueltaRapida){
+      vrReal = resultados[gp].sprintCarrera.vueltaRapida.piloto;
+      vrTiempo = resultados[gp].sprintCarrera.vueltaRapida.tiempo;
+    }
+
+  }else{
+    real = resultados[gp].carrera.posiciones;
+
+    if(resultados[gp].carrera.vueltaRapida){
+      vrReal = resultados[gp].carrera.vueltaRapida.piloto;
+      vrTiempo = resultados[gp].carrera.vueltaRapida.tiempo;
+    }
+  }
 }
 
 
