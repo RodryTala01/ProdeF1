@@ -1,7 +1,7 @@
-const circuitoNombre = "GP 3/24: Japón, Suzuka";
-const circuitoImagen = "image/circuitos/japon.png";
-const horarioSprint = ""
-const horarioCarrera = "SPRINT: Sábado 28 de Marzo, 03:00 AM";
+const circuitoNombre = "GP 6/24: Miami, Estados Unidos";
+const circuitoImagen = "image/circuitos/miami.png";
+const horarioSprint = "SPRINT: Viernes 1 de Mayo, 17:30hs"
+const horarioCarrera = "CARRERA: Sábado 2 de Mayo, 17:00hs";
 
 const pilotos=[
 

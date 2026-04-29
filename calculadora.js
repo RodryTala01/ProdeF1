@@ -174,7 +174,64 @@ vueltaRapida:{
 piloto:"Kimi Antonelli",
 tiempo:"1:35.275"
 }
+}
 },
+japon:{
+clasificacion:{posiciones:[
+{piloto:"Kimi Antonelli", tiempo:"1:28.778"},
+{piloto:"George Russell", tiempo:"1:29.076"},
+{piloto:"Oscar Piastri", tiempo:"1:29.132"},
+{piloto:"Charles Leclerc", tiempo:"1:29.405"},
+{piloto:"Lando Norris", tiempo:"1:29.409"},
+{piloto:"Lewis Hamilton", tiempo:"1:29.567"},
+{piloto:"Pierre Gasly", tiempo:"1:29.691"},
+{piloto:"Isack Hadjar", tiempo:"1:29.978"},
+{piloto:"Gabriel Bortoleto", tiempo:"1:30.274"},
+{piloto:"Arvid Lindblad", tiempo:"1:30.319"},
+{piloto:"Max Verstappen", tiempo:"1:30.262"},
+{piloto:"Esteban Ocon", tiempo:"1:30.309"},
+{piloto:"Nico Hülkenberg", tiempo:"1:30.387"},
+{piloto:"Liam Lawson", tiempo:"1:30.495"},
+{piloto:"Franco Colapinto", tiempo:"1:30.627"},
+{piloto:"Carlos Sainz", tiempo:"1:31.033"},
+{piloto:"Alexander Albon", tiempo:"1:31.088"},
+{piloto:"Oliver Bearman", tiempo:"1:31.090"},
+{piloto:"Sergio Pérez", tiempo:"1:32.206"},
+{piloto:"Valtteri Bottas", tiempo:"1:32.330"},
+{piloto:"Fernando Alonso", tiempo:"1:32.646"},
+{piloto:"Lance Stroll", tiempo:"1:32.920"}
+]},
+
+carrera:{
+posiciones:[
+{piloto:"Kimi Antonelli", tiempo:"1:28:03.403"},
+{piloto:"Oscar Piastri", tiempo:"+13.722"},
+{piloto:"Charles Leclerc", tiempo:"+15.270"},
+{piloto:"George Russell", tiempo:"+15.754"},
+{piloto:"Lando Norris", tiempo:"+23.479"},
+{piloto:"Lewis Hamilton", tiempo:"+25.037"},
+{piloto:"Pierre Gasly", tiempo:"+32.340"},
+{piloto:"Max Verstappen", tiempo:"+32.677"},
+{piloto:"Liam Lawson", tiempo:"+50.180"},
+{piloto:"Esteban Ocon", tiempo:"+51.216"},
+{piloto:"Nico Hülkenberg", tiempo:"+52.280"},
+{piloto:"Isack Hadjar", tiempo:"+56.154"},
+{piloto:"Gabriel Bortoleto", tiempo:"+59.078"},
+{piloto:"Arvid Lindblad", tiempo:"+59.848"},
+{piloto:"Carlos Sainz", tiempo:"+1:05.008"},
+{piloto:"Franco Colapinto", tiempo:"+1:05.773"},
+{piloto:"Sergio Pérez", tiempo:"+1:32.453"},
+{piloto:"Fernando Alonso", tiempo:"+1 vuelta"},
+{piloto:"Valtteri Bottas", tiempo:"+1 vuelta"},
+{piloto:"Alexander Albon", tiempo:"+2 vueltas"},
+{piloto:"Lance Stroll", tiempo:"DNF"},
+{piloto:"Oliver Bearman", tiempo:"DNF"}
+],
+vueltaRapida:{
+piloto:"Kimi Antonelli",
+tiempo:"1:32.432"
+}
+}
 }
 
 
@@ -286,24 +343,24 @@ const t=texto.toLowerCase();
 
 if(t.includes("australia")) return "australia";
 if(t.includes("china")) return "china";
-if(t.includes("japon")) return "japon";
-if(t.includes("bahrein")) return "bahrein";
+if(t.includes("japón")) return "japon";
+if(t.includes("bahréin")) return "bahrein";
 if(t.includes("arabia")) return "arabia";
 if(t.includes("miami")) return "miami";
-if(t.includes("canada")) return "canada";
+if(t.includes("canadá")) return "canada";
 if(t.includes("monaco")) return "monaco";
-if(t.includes("espana")) return "espana";
+if(t.includes("españa")) return "espana";
 if(t.includes("austria")) return "austria";
 if(t.includes("reino unido")) return "uk";
-if(t.includes("belgica")) return "belgica";
-if(t.includes("hungria")) return "hungria";
-if(t.includes("paises bajos")) return "paisesbajos";
+if(t.includes("bélgica")) return "belgica";
+if(t.includes("hungría")) return "hungria";
+if(t.includes("países bajos")) return "paisesbajos";
 if(t.includes("italia")) return "italia";
 if(t.includes("madrid")) return "madrid";
 if(t.includes("azerbaiyan")) return "azerbaiyan";
 if(t.includes("singapur")) return "singapur";
 if(t.includes("estados unidos")) return "usa";
-if(t.includes("mexico")) return "mexico";
+if(t.includes("méxico")) return "mexico";
 if(t.includes("brasil")) return "brasil";
 if(t.includes("las vegas")) return "lasvegas";
 if(t.includes("qatar")) return "qatar";
