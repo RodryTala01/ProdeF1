@@ -1,7 +1,7 @@
-const circuitoNombre = "GP 7/24: Montreal, Canadá";
-const circuitoImagen = "image/circuitos/canada.png";
-const horarioSprint = "SPRINT: Sábado 23 de Mayo 13:00hs"
-const horarioCarrera = "CARRERA: Domingo 24 de Mayo 17:00hs";
+const circuitoNombre = "GP 8/24, Monaco";
+const circuitoImagen = "image/circuitos/monaco.png";
+const horarioSprint = ""
+const horarioCarrera = "Domingo 7 de Junio 10:00hs";
 
 const pilotos=[
 
