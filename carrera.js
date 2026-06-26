@@ -1,7 +1,7 @@
-const circuitoNombre = "GP 8/24, Monaco";
-const circuitoImagen = "image/circuitos/monaco.png";
+const circuitoNombre = "GP 9/24, Austria";
+const circuitoImagen = "image/circuitos/austria.png";
 const horarioSprint = ""
-const horarioCarrera = "Domingo 7 de Junio 10:00hs";
+const horarioCarrera = "Domingo 28 de Junio 10:00hs";
 
 const pilotos=[
 
