@@ -1,7 +1,7 @@
-const circuitoNombre = "GP 10/24, Gran Bretaña";
-const circuitoImagen = "image/circuitos/gran bretaña.png";
+const circuitoNombre = "GP 11/24, Belgica";
+const circuitoImagen = "image/circuitos/belgica.png";
 const horarioSprint = ""
-const horarioCarrera = "Sábado 4 de Junio, 12:00hs";
+const horarioCarrera = "Sábado 18 de Julio, 11:00hs";
 
 const pilotos=[
 
